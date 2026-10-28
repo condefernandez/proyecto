@@ -1,0 +1,74 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego de preguntas</title>
+
+    <link rel="stylesheet" href="../css/estilos.css">
+
+    <style>
+        .juego {
+            max-width: 650px;
+            margin: 30px auto;
+            padding: 25px;
+            text-align: center;
+            background-color: #ffffff;
+            border: 2px solid #c9a227;
+            border-radius: 12px;
+        }
+
+        .respuesta,
+        #siguiente {
+            display: block;
+            width: 100%;
+            margin: 10px 0;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            background-color: #17365d;
+            color: white;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .respuesta:hover,
+        #siguiente:hover {
+            background-color: #c9a227;
+            color: #102743;
+        }
+
+        .respuesta:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+        }
+
+        #resultado {
+            font-weight: bold;
+            margin: 20px 0;
+        }
+
+        #siguiente {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="juego">
+        <h1>¿Cuánto sabés sobre Manuel Segura López?</h1>
+
+        <p>Respondé las preguntas y comprobá tus conocimientos.</p>
+
+        <h3 id="pregunta"></h3>
+
+        <div id="respuestas"></div>
+
+        <p id="resultado"></p>
+
+        <button id="siguiente">Siguiente pregunta</button>
+    </div>
+
+    <script src="../js/juego.js"></script>
+</body>
+</html>
