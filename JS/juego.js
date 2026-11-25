@@ -25,10 +25,10 @@ function iniciarJuego() {
     // Pregunta 1
 
     let respuesta1 = Number(prompt(
-        "PREGUNTA 1 DE 5\n\n" +
-        "¿Sobre qué personaje trata esta página?\n\n" +
-        "1. Manuel Segura López\n" +
-        "2. San Martín\n" +
+        "PREGUNTA 1 DE 5" +
+        "¿Sobre qué personaje trata esta página?" +
+        "1. Manuel Segura López" +
+        "2. San Martín" +
         "3. William Shakespeare"
     ));
 
@@ -38,10 +38,10 @@ function iniciarJuego() {
     // Pregunta 2
 
     let respuesta2 = Number(prompt(
-        "PREGUNTA 2 DE 5\n\n" +
-        "¿Qué título recibe Manuel Segura López?\n\n" +
-        "1. Rey\n" +
-        "2. Beato\n" +
+        "PREGUNTA 2 DE 5" +
+        "¿Qué título recibe Manuel Segura López?" +
+        "1. Rey" +
+        "2. Beato" +
         "3. Presidente"
     ));
 
@@ -51,10 +51,10 @@ function iniciarJuego() {
     // Pregunta 3
 
     let respuesta3 = Number(prompt(
-        "PREGUNTA 3 DE 5\n\n" +
-        "¿A qué grupo pertenece Manuel Segura López?\n\n" +
-        "1. Beatos Mártires Escolapios\n" +
-        "2. Próceres argentinos\n" +
+        "PREGUNTA 3 DE 5" +
+        "¿A qué grupo pertenece Manuel Segura López?" +
+        "1. Beatos Mártires Escolapios" +
+        "2. Próceres argentinos" +
         "3. Escritores ingleses"
     ));
 
@@ -64,10 +64,10 @@ function iniciarJuego() {
     // Pregunta 4
 
     let respuesta4 = Number(prompt(
-        "PREGUNTA 4 DE 5\n\n" +
-        "¿En qué sección se puede conocer su relación con la Iglesia?\n\n" +
-        "1. Muerte\n" +
-        "2. Vida del Beato\n" +
+        "PREGUNTA 4 DE 5" +
+        "¿En qué sección se puede conocer su relación con la Iglesia?" +
+        "1. Muerte" +
+        "2. Vida del Beato" +
         "3. Su rol en la Iglesia"
     ));
 
@@ -77,10 +77,10 @@ function iniciarJuego() {
     // Pregunta 5
 
     let respuesta5 = Number(prompt(
-        "PREGUNTA 5 DE 5\n\n" +
-        "¿Qué tres aspectos de Manuel Segura López presenta la página?\n\n" +
-        "1. Sus viajes, deportes y estudios\n" +
-        "2. Su vida, su rol en la Iglesia y su muerte\n" +
+        "PREGUNTA 5 DE 5" +
+        "¿Qué tres aspectos de Manuel Segura López presenta la página?" +
+        "1. Sus viajes, deportes y estudios" +
+        "2. Su vida, su rol en la Iglesia y su muerte" +
         "3. Su familia, sus amigos y sus vacaciones"
     ));
 
@@ -90,7 +90,7 @@ function iniciarJuego() {
     // Resultado final
 
     alert(
-        "¡Juego terminado!\n\n" +
+        "¡Juego terminado!" +
         "Tu puntaje final es: " + puntaje + " de 5"
     );
 
