@@ -1,106 +1,97 @@
 
-const preguntas = [
-    {
-        pregunta: "¿Sobre quién trata esta página?",
-        opciones: [
-            "Manuel Segura López",
-            "William Shakespeare",
-            "San Martín"
-        ],
-        correcta: 0
-    },
-    {
-        pregunta: "¿Qué tema principal aborda el proyecto?",
-        opciones: [
-            "La historia de los videojuegos",
-            "La vida de un mártir escolapio",
-            "Los deportes"
-        ],
-        correcta: 1
-    },
-    {
-        pregunta: "¿Qué información se puede consultar en la página?",
-        opciones: [
-            "Su vida, su rol en la Iglesia y su muerte",
-            "Sus videojuegos favoritos",
-            "Sus viajes por el mundo"
-        ],
-        correcta: 0
-    }
-];
 
-let numeroPregunta = 0;
 let puntaje = 0;
 
-const enunciado = document.getElementById("pregunta");
-const respuestas = document.getElementById("respuestas");
-const resultado = document.getElementById("resultado");
-const botonSiguiente = document.getElementById("siguiente");
+function comprobarRespuesta(respuesta, correcta) {
 
-function mostrarPregunta() {
-    resultado.textContent = "";
-    botonSiguiente.style.display = "none";
+    if (respuesta == correcta) {
 
-    const actual = preguntas[numeroPregunta];
-    enunciado.textContent = actual.pregunta;
-    respuestas.innerHTML = "";
+        alert("¡Respuesta correcta!");
 
-    actual.opciones.forEach((opcion, indice) => {
-        const boton = document.createElement("button");
+        puntaje = puntaje + 1;
 
-        boton.textContent = opcion;
-        boton.classList.add("respuesta");
-
-        boton.addEventListener("click", function () {
-            comprobarRespuesta(indice);
-        });
-
-        respuestas.appendChild(boton);
-    });
-}
-
-function comprobarRespuesta(indice) {
-    const actual = preguntas[numeroPregunta];
-    const botones = respuestas.querySelectorAll("button");
-
-    botones.forEach((boton) => {
-        boton.disabled = true;
-    });
-
-    if (indice === actual.correcta) {
-        resultado.textContent = "¡Correcto!";
-        puntaje++;
     } else {
-        resultado.textContent =
-            "Incorrecto. La respuesta correcta es: " +
-            actual.opciones[actual.correcta];
+
+        alert("Respuesta incorrecta.");
+
     }
 
-    botonSiguiente.style.display = "inline-block";
 }
 
-botonSiguiente.addEventListener("click", function () {
-    numeroPregunta++;
+function iniciarJuego() {
 
-    if (numeroPregunta < preguntas.length) {
-        mostrarPregunta();
-    } else {
-        enunciado.textContent = "¡Juego terminado!";
-        respuestas.innerHTML = "";
-        resultado.textContent =
-            "Tu puntaje es " + puntaje + " de " + preguntas.length;
+    puntaje = 0;
 
-        botonSiguiente.textContent = "Volver a jugar";
-        botonSiguiente.style.display = "inline-block";
+    // Pregunta 1
 
-        botonSiguiente.onclick = function () {
-            numeroPregunta = 0;
-            puntaje = 0;
-            botonSiguiente.textContent = "Siguiente pregunta";
-            botonSiguiente.onclick = null;
-            mostrarPregunta();
-        };
-    }
-});
+    let respuesta1 = Number(prompt(
+        "PREGUNTA 1 DE 5\n\n" +
+        "¿Sobre qué personaje trata esta página?\n\n" +
+        "1. Manuel Segura López\n" +
+        "2. San Martín\n" +
+        "3. William Shakespeare"
+    ));
 
-mostrarPregunta();
+    comprobarRespuesta(respuesta1, 1);
+
+
+    // Pregunta 2
+
+    let respuesta2 = Number(prompt(
+        "PREGUNTA 2 DE 5\n\n" +
+        "¿Qué título recibe Manuel Segura López?\n\n" +
+        "1. Rey\n" +
+        "2. Beato\n" +
+        "3. Presidente"
+    ));
+
+    comprobarRespuesta(respuesta2, 2);
+
+
+    // Pregunta 3
+
+    let respuesta3 = Number(prompt(
+        "PREGUNTA 3 DE 5\n\n" +
+        "¿A qué grupo pertenece Manuel Segura López?\n\n" +
+        "1. Beatos Mártires Escolapios\n" +
+        "2. Próceres argentinos\n" +
+        "3. Escritores ingleses"
+    ));
+
+    comprobarRespuesta(respuesta3, 1);
+
+
+    // Pregunta 4
+
+    let respuesta4 = Number(prompt(
+        "PREGUNTA 4 DE 5\n\n" +
+        "¿En qué sección se puede conocer su relación con la Iglesia?\n\n" +
+        "1. Muerte\n" +
+        "2. Vida del Beato\n" +
+        "3. Su rol en la Iglesia"
+    ));
+
+    comprobarRespuesta(respuesta4, 3);
+
+
+    // Pregunta 5
+
+    let respuesta5 = Number(prompt(
+        "PREGUNTA 5 DE 5\n\n" +
+        "¿Qué tres aspectos de Manuel Segura López presenta la página?\n\n" +
+        "1. Sus viajes, deportes y estudios\n" +
+        "2. Su vida, su rol en la Iglesia y su muerte\n" +
+        "3. Su familia, sus amigos y sus vacaciones"
+    ));
+
+    comprobarRespuesta(respuesta5, 2);
+
+
+    // Resultado final
+
+    alert(
+        "¡Juego terminado!\n\n" +
+        "Tu puntaje final es: " + puntaje + " de 5"
+    );
+
+}
